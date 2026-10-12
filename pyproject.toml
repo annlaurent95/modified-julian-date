@@ -1,6 +1,6 @@
 [project]
 name = "modified-julian-date"
-version = "0.1.0"
+version = "0.1.1"
 description = "Translates satellite tracking's Modified Julian Dates to standard Gregorian calendar format."
 requires-python = ">=3.10"
 dependencies = []
