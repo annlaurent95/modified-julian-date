@@ -31,3 +31,10 @@ The returned `datetime` is naive. MJD describes a continuous day count, not a ti
 - `mjd_to_gregorian(mjd: float) -> datetime` — full date and time to microsecond resolution.
 - `mjd_to_gregorian_truncated(mjd: float) -> datetime` — date at midnight, fractional day discarded.
 - `GREGORIAN_EPOCH_MJD` — the MJD value (0.0) whose Gregorian date is the MJD epoch.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
